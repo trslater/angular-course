@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { COURSES } from "../db-data";
 import { CourseCardComponent } from "./course-card/course-card.component";
+import { Course } from "./model/course";
 
 @Component({
   selector: "app-root",
@@ -9,4 +10,10 @@ import { CourseCardComponent } from "./course-card/course-card.component";
   styleUrls: ["./app.component.css"],
   imports: [CourseCardComponent],
 })
-export class AppComponent {}
+export class AppComponent {
+  courses: Course[] = COURSES;
+
+  doThing(course: Course) {
+    console.log(course);
+  }
+}
